@@ -53,7 +53,6 @@
             background-image: url('./image/floor.gif');
         }
     </style>
-    <script src="js/main.js"></script>
 </head>
 <body>
     <div class="container">
@@ -63,7 +62,7 @@
         <div style="margin-top:8px;">
             <span>关卡数:</span>
             <select id="level" class="select-style" >
-                    <option value="0">1</option>
+                    <option value="5">1</option>
             </select>
             <span>难度:</span>
             <select id="diff" class="select-style" placeholder="难度">
@@ -71,23 +70,28 @@
                 <option value="1">一般</option>
                 <option value="2">难</option>
             </select>
-            <button class="btn" onclick="selectlevel()">选择</button>
+            <button id="btn" class="btn">选择</button>
         </div>
         <div style="margin-top:10px">
-            <button class="btn2" onclick="selectlevel()">上一关</button>
-            <button class="btn2" onclick="selectlevel()">下一关</button>
-            <button class="btn2" onclick="selectlevel()">重置</button>
+            <button class="btn2" id="pre">上一关</button>
+            <button class="btn2" id="next">下一关</button>
+            <button class="btn2" id="reset">重置</button>
         </div>
+        <canvas id="canvas" style="margin-top:20px"></canvas>
     </div>
-    <div id="SokoBan-Wrap"></div>
-    <script type="text/javascript">
+    <script src="js/mapdata.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+    <!-- <div id="SokoBan-Wrap"></div> -->
+    <!-- <script type="text/javascript">
         function $(str){
             return document.getElementById(str)
         }
         window.onload=function(){
             Game.exe();
         };
-        var Game = {
+        var Game = { 
             // 取得的背景地图
             Swrap:$('SokoBan-Wrap'),
 
@@ -112,6 +116,6 @@
                 }
             }
         };
-    </script>
+    </script> -->
 </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .container{
+            width: 80%;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 26px;
+        }
+        .container p{
+            color: #8f8f8f;
+        }
+        select.select-style{
+            background-color: #ffffff;
+            background-image: none !important;
+            filter: none !important;
+            border: 1px solid #e5e5e5;
+            outline: none;
+            height: 25px !important;
+            line-height: 25px;
+            width: 80px; 
+            padding: 2px 0;
+            margin-right: 10px;
+        }
+        .btn,.btn2{
+            width: 80px;
+            height: 25px; 
+            border-width: 0px;
+            border-radius: 3px;
+            background: #1E90FF; 
+            cursor: pointer;
+            outline: none; 
+            font-family: Microsoft YaHei; 
+            color: white; 
+            font-size: 13px; 
+            letter-spacing: 5px;
+        }
+        .btn2{
+            background: #95D52F; 
+            margin: 0px 5px;
+        }
+        .btn:hover { 
+            background: #5599FF;
+        }
+        #SokoBan-Wrap{
+            margin: 10px auto;
+            background-image: url('./image/floor.gif');
+        }
+    </style>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>推箱子大作战</h2>
+        <p>可自由选择关卡数和难度</p>
+        <p>上下左右键控制人物移动，将所有箱子推入黄色范围即为胜利</p>
+        <div style="margin-top:8px;">
+            <span>关卡数:</span>
+            <select id="level" class="select-style" >
+                    <option value="0">1</option>
+            </select>
+            <span>难度:</span>
+            <select id="diff" class="select-style" placeholder="难度">
+                <option value="0">容易</option>
+                <option value="1">一般</option>
+                <option value="2">难</option>
+            </select>
+            <button class="btn" onclick="selectlevel()">选择</button>
+        </div>
+        <div style="margin-top:10px">
+            <button class="btn2" onclick="selectlevel()">上一关</button>
+            <button class="btn2" onclick="selectlevel()">下一关</button>
+            <button class="btn2" onclick="selectlevel()">重置</button>
+        </div>
+    </div>
+    <div id="SokoBan-Wrap"></div>
+    <script type="text/javascript">
+        function $(str){
+            return document.getElementById(str)
+        }
+        window.onload=function(){
+            Game.exe();
+        };
+        var Game = {
+            // 取得的背景地图
+            Swrap:$('SokoBan-Wrap'),
+
+            //执行函数
+            exe:function(){
+                this.createMap();
+            },
+            //创建背景地图
+            createMap:function(){
+                var size={x:16,y:16};
+                this.Swrap.style.cssText='width:'+size.x*35+'px;height:'+size.y*35+'px';
+                
+            },
+            controlPerson:function(oP){
+                var This = this;
+                document.onkeydown=function(ev){
+                    ev =ev || window.event;
+                    var keyCode = ev.keyCode;
+                    switch(keyCode){
+                        case 37:
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>

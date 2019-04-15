@@ -13,8 +13,9 @@
             text-align: center;
             line-height: 26px;
         }
-        .container p{
+        .container p,span{
             color: #8f8f8f;
+            letter-spacing: 2px;
         }
         select.select-style{
             background-color: #ffffff;
@@ -52,17 +53,20 @@
             margin: 10px auto;
             background-image: url('./image/floor.gif');
         }
+        #step{
+            width: 5px;
+            color:coral;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>推箱子大作战</h2>
         <p>可自由选择关卡数和难度</p>
-        <p>上下左右键控制人物移动，将所有箱子推入黄色范围即为胜利</p>
+        <p>WASD键控制人物移动，将所有箱子推入黄色范围即为胜利</p>
         <div style="margin-top:8px;">
             <span>关卡数:</span>
             <select id="level" class="select-style" >
-                    <option value="5">1</option>
             </select>
             <span>难度:</span>
             <select id="diff" class="select-style" placeholder="难度">
@@ -76,6 +80,9 @@
             <button class="btn2" id="pre">上一关</button>
             <button class="btn2" id="next">下一关</button>
             <button class="btn2" id="reset">重置</button>
+        </div>
+        <div>
+            <span>剩余可走的步数:</span><span id="step"></span><span>步</span>
         </div>
         <canvas id="canvas" style="margin-top:20px"></canvas>
     </div>

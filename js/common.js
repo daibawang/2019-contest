@@ -6,8 +6,13 @@ function $(str){
 //初始化关卡选择
 var selectid=$('level');
 for(var i=0;i<levels.length;i++){
-    selectid.options.add(new Option(i,i));
+    selectid.options.add(new Option(i+1,i+1));
 }
+//难度
+const diffstep=["500","250","100"];
+//步数
+$('step').innerHTML=diffstep[parseInt($('diff').value)];
+
 // 地图的canvas元素
 const mapcvs=$('canvas');
 
